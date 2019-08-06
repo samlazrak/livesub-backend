@@ -31,7 +31,7 @@
   "scripts": {
     "dev": "nodemon --exec ts-node --files src/index.ts",
     "fish:dev": "fish dev.fish",
-    "test-server": "ts-node src/index.ts",
+    "test-server": "ts-node --files src/index.ts",
     "test": "jest",
     "fish:test": "fish test.fish",
     "gen": "gql2ts src/schema.graphql -o src/types/schema.d.ts"

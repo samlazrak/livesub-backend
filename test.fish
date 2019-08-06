@@ -1,3 +1,5 @@
 set -x NODE_ENV test
 
-yarn test
+ts-node src/index.ts
+wait 
+jest
