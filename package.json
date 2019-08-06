@@ -5,18 +5,22 @@
   "devDependencies": {
     "@gql2ts/types": "^1.9.0",
     "@types/bcryptjs": "^2.4.2",
+    "@types/jest": "^24.0.17",
     "@types/node": "^12.7.0",
     "@types/uuid": "^3.4.5",
     "gql2ts": "^1.10.1",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
     "ts-node": "8.3.0",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "3.5.3"
+    "typescript": "^3.5.3"
   },
   "dependencies": {
     "@gql2ts/from-schema": "^1.10.1",
     "bcryptjs": "^2.4.3",
     "graphql-import": "^0.7.1",
+    "graphql-request": "^1.8.2",
     "graphql-tools": "^4.0.5",
     "graphql-yoga": "^1.18.1",
     "pg": "^7.3.0",
@@ -26,6 +30,21 @@
   },
   "scripts": {
     "dev": "nodemon --exec ts-node --files src/index.ts",
+    "test": "jest",
     "gen": "gql2ts src/schema.graphql -o src/types/schema.d.ts"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
