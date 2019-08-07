@@ -12,6 +12,7 @@
     "@types/ws": "^6.0.2",
     "gql2ts": "^1.10.1",
     "jest": "^24.8.0",
+    "shx": "^0.3.2",
     "ts-jest": "^24.0.2",
     "ts-node": "8.3.0",
     "tslint": "^5.18.0",
@@ -32,7 +33,9 @@
   },
   "scripts": {
     "test": "jest",
+    "test:env": "NODE_ENV=test jest",
     "dev": "nodemon --exec ts-node src/index.ts",
+    "dev:env": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
     "gen": "gql2ts src/schema.graphql -o types/GQL/index.d.ts"
   },
   "jest": {
