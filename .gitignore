@@ -5,3 +5,5 @@ build/
 tmp/
 temp/
 dist/
+yarn-error.log
+package-lock.json
