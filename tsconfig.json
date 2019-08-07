@@ -6,7 +6,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "moduleResolution": "node",
-    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "typeRoots": ["types", "./node_modules/@types"],
     "removeComments": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -18,8 +18,13 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": false,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "plugins": [
+      {
+        "name": "@divyenduz/ts-graphql-plugin"
+      }
+    ]
   },
   "exclude": ["node_modules"],
-  "include": ["./src/**/*.tsx", "./src/**/*.ts"]
+  "include": ["./**/*.tsx", "./**/*.ts"]
 }

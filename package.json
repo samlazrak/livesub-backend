@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "description": "Awesome project developed with TypeORM.",
   "devDependencies": {
+    "@divyenduz/ts-graphql-plugin": "^0.1.0",
     "@gql2ts/types": "^1.9.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/jest": "^24.0.17",
     "@types/node": "^12.7.0",
     "@types/uuid": "^3.4.5",
+    "@types/ws": "^6.0.2",
     "gql2ts": "^1.10.1",
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
@@ -29,12 +31,9 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
-    "dev": "nodemon --exec ts-node --files src/index.ts",
-    "fish:dev": "fish dev.fish",
-    "test-server": "ts-node --files src/index.ts",
     "test": "jest",
-    "fish:test": "fish test.fish",
-    "gen": "gql2ts src/schema.graphql -o src/types/schema.d.ts"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "gen": "gql2ts src/schema.graphql -o types/GQL/index.d.ts"
   },
   "jest": {
     "transform": {
