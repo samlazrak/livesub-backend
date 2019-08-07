@@ -1,7 +1,7 @@
 {
   "name": "backend",
-  "version": "0.0.1",
-  "description": "Awesome project developed with TypeORM.",
+  "version": "1.0.0",
+  "description": "backend",
   "devDependencies": {
     "@divyenduz/ts-graphql-plugin": "^0.1.0",
     "@gql2ts/types": "^1.9.0",
