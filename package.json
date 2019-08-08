@@ -6,8 +6,10 @@
     "@divyenduz/ts-graphql-plugin": "^0.1.0",
     "@gql2ts/types": "^1.9.0",
     "@types/bcryptjs": "^2.4.2",
+    "@types/ioredis": "^4.0.13",
     "@types/jest": "^24.0.17",
     "@types/node": "^12.7.0",
+    "@types/node-fetch": "^2.5.0",
     "@types/uuid": "^3.4.5",
     "@types/ws": "^6.0.2",
     "@types/yup": "^0.26.22",
@@ -27,6 +29,8 @@
     "graphql-request": "^1.8.2",
     "graphql-tools": "^4.0.5",
     "graphql-yoga": "^1.18.1",
+    "ioredis": "^4.14.0",
+    "node-fetch": "^2.6.0",
     "pg": "^7.3.0",
     "reflect-metadata": "^0.1.10",
     "typeorm": "0.2.18",
@@ -36,11 +40,12 @@
   "scripts": {
     "test": "jest",
     "test:env": "NODE_ENV=test jest --forceExit",
-    "dev": "nodemon --exec ts-node src/index.ts",
-    "dev:env": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
-    "gen": "gql2ts src/schema.graphql -o types/GQL/index.d.ts"
+    "dev": "nodemon --exec ts-node index.ts",
+    "dev:env": "NODE_ENV=development nodemon --exec ts-node index.ts",
+    "gen": "ts-node src/scripts/createTypes.ts"
   },
   "jest": {
+    "globalSetup": "./src/scripts/test/callSetup.js",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },

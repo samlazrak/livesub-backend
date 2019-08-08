@@ -23,7 +23,7 @@ const schema = yup.object().shape({
 
 export const resolvers: ResolverMap = {
   Query: {
-    bye: () => 'bye',
+    test_register: () => 'test',
   },
   Mutation: {
     register: async (_, args: GQL.IRegisterOnMutationArguments) => {

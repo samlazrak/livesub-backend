@@ -26,5 +26,5 @@
     ]
   },
   "exclude": ["node_modules"],
-  "include": ["./**/*.tsx", "./**/*.ts"]
+  "include": ["./**/*.tsx", "./**/*.ts", "src/scripts/test/callSetup.js"]
 }

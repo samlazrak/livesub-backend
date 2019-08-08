@@ -16,6 +16,9 @@ export class User extends BaseEntity {
 
   @Column('text') password: string;
 
+  @Column('boolean', { default: false })
+  confirmed: boolean;
+
   @BeforeInsert()
   async hashPassword() {
     /* Change salt # in prod */
