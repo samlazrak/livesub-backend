@@ -1,7 +1,7 @@
 import { request } from 'graphql-request';
-import { invalidLogin, confirmEmailError } from './errorMessages';
 import { User } from '../../entity/User';
 import { createTypeormConn } from '../../utils/createTypeormConn';
+import { confirmEmailError, invalidLogin } from './errorMessages';
 
 const email = 'sam@samlazrak.com';
 const password = 'testtestest';
@@ -29,10 +29,7 @@ beforeAll(async () => {
 });
 
 const loginExpectError = async (e: string, p: string, errMsg: string) => {
-  const response = await request(
-    process.env.TEST_HOST as string,
-    loginMutation(e, p),
-  );
+  const response = await request(process.env.TEST_HOST as string, loginMutation(e, p));
 
   expect(response).toEqual({
     login: [
@@ -50,10 +47,7 @@ describe('login', () => {
   });
 
   test('email not confirmed', async () => {
-    await request(
-      process.env.TEST_HOST as string,
-      registerMutation(email, password),
-    );
+    await request(process.env.TEST_HOST as string, registerMutation(email, password));
 
     await loginExpectError(email, password, confirmEmailError);
     // @ts-ignore
@@ -61,10 +55,7 @@ describe('login', () => {
 
     await loginExpectError(email, 'aslkdfjaksdljf', invalidLogin);
 
-    const response = await request(
-      process.env.TEST_HOST as string,
-      loginMutation(email, password),
-    );
+    const response = await request(process.env.TEST_HOST as string, loginMutation(email, password));
 
     expect(response).toEqual({ login: null });
   });
