@@ -9,7 +9,7 @@
       "type": "node",
       "request": "launch",
       //"preLaunchTask": "ts-node-files",
-      "args": ["${workspaceRoot}/src/index.ts"],
+      "args": ["${workspaceRoot}/index.ts"],
       "runtimeArgs": ["-r", "ts-node/register"],
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",

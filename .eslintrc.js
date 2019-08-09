@@ -18,5 +18,6 @@ module.exports = {
     '@typescript-eslint/no-object-literal-type-assertion': 'off',
     '@typescript-eslint/indent': ['error', 2],
     '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
   },
 };
